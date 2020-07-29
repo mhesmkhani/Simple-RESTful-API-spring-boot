@@ -1,76 +1,91 @@
 package com.module.controller;
 
-import com.module.model.Users;
-import com.module.repository.UserRepository;
-import com.module.validation.ValidationMaker;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+        import com.module.model.Users;
+        import com.module.repository.UserRepository;
+        import com.module.middleware.UserMiddleware;
+        import org.springframework.beans.factory.annotation.Autowired;
+        import org.springframework.http.ResponseEntity;
 
-import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+        import java.util.HashMap;
+        import java.util.Map;
 
 /**
  * Created by mhesmkhani on 7/27/2020.
  */
-@RestController
-@RequestMapping(path = "/api/users")
-@Table(name = "users", uniqueConstraints = {
-        @UniqueConstraint(columnNames = { "username" }),
-        @UniqueConstraint(columnNames = { "email" }) })
-public class UserController extends ValidationMaker {
 
+public class UserController extends UserMiddleware {
 
-    private ValidationMaker validationMaker;
+    private UserMiddleware userMiddleware;
     private UserRepository userRepository;
+
+    @Autowired
+    public void setUserMiddleware(UserMiddleware userMiddleware) {
+        this.userMiddleware = userMiddleware;
+    }
 
     @Autowired
     public void setUserRepository(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
-    @Autowired
-    public void setUserValidation(ValidationMaker validationMaker) {
-        this.validationMaker = validationMaker;
-    }
-
-    @GetMapping(path = "/get")
-    public List<Users> get(){
-        return userRepository.findAll();
-    }
-
-    @PostMapping(path = "/register")
     public ResponseEntity<Map> RegisterUser(Users users) throws Exception {
-
         Map map = new HashMap();
-
         try {
-             Map res = new HashMap();
-             String msg = validationMaker.UserRegisterValidation(users);
-                  if(msg == "ok"){
-                      Users user = userRepository.findByEmail(users.getEmail());
-                       if(user != null){
-                          res.put("messsage","The email is Already");
-                          return ResponseEntity.status(200).body(res);
-                      }
+            Map res = new HashMap();
+            String msg = userMiddleware.UserRegisterValidation(users);
+            if(msg == "ok"){
+                Users user = userRepository.findByEmail(users.getEmail());
+                if(user != null){
+                    res.put("messsage","The email is Already");
+                    return ResponseEntity.status(200).body(res);
+                }
+                users.setPassword(userMiddleware.PasswordEncrypt(users));
+                users.setConfirmPassword(null);
+                users.setRole("user");
+                users.setToken(null);
+                userRepository.save(users);
+                res.put("message","success");
+                return ResponseEntity.status(200).body(res);
 
-                      userRepository.save(users);
-                      res.put("message","success");
-                      return ResponseEntity.status(200).body(res);
+            }else {
+                res.put("message",msg);
+                return ResponseEntity.status(200).body(res);
+            }
 
-                  }else {
-                      res.put("message",msg);
-                      return ResponseEntity.status(200).body(res);
-                  }
-
-         } catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
-//        map.put("message",users.getConfirm_password());
-//        return ResponseEntity.status(400).body(map);
         map.put("message", "The value of one of the fields is empty");
+        return ResponseEntity.status(403).body(map);
+    }
+
+    public ResponseEntity<Map> LoginUser(Users users) throws Exception{
+        Map map = new HashMap();
+        try {
+            Map res = new HashMap();
+            String msg = userMiddleware.UserLoginValidation(users);
+            String HashPass = userMiddleware.PasswordEncrypt(users);
+            if(msg == "ok"){
+                Users user = userRepository.findByEmail(users.getEmail());
+                if(user != null){
+                    if(HashPass.equals(user.getPassword())){
+                        res.put("data",user);
+                        return ResponseEntity.status(200).body(res);
+                    }else {
+                        res.put("message","the password or email is wrong");
+                        return ResponseEntity.status(403).body(res);
+                    }
+                }else {
+                    res.put("message","the password or email is wrong");
+                    return ResponseEntity.status(403).body(res);
+                }
+            }else {
+                res.put("message",msg);
+                return ResponseEntity.status(200).body(res);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        map.put("message", "server error");
         return ResponseEntity.status(403).body(map);
     }
 }

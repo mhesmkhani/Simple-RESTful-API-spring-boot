@@ -10,5 +10,6 @@ public interface Validation {
 
 
      String UserRegisterValidation(Users users);
+     String UserLoginValidation(Users users);
 
 }

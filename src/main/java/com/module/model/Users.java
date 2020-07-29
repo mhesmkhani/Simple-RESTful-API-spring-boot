@@ -3,11 +3,15 @@ package com.module.model;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Created by mhesmkhani on 7/27/2020.
  */
 @Entity
+@Table(name = "users", uniqueConstraints = {
+        @UniqueConstraint(columnNames = { "username" }),
+        @UniqueConstraint(columnNames = { "email" }) })
 public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,6 +28,7 @@ public class Users {
     @Column(name = "password")
     private String password;
 
+    @Column(name = "confirm_password")
     private String ConfirmPassword;
 
     @Column(name = "role")

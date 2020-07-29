@@ -1,17 +1,14 @@
-package com.module.validation;
+package com.module.middleware;
 
 import com.module.model.Users;
-import com.module.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-
-import java.util.HashMap;
-import java.util.Map;
+import com.module.utils.EncryptionUtils;
+import com.module.validation.Validation;
+import org.apache.commons.codec.digest.DigestUtils;
 
 /**
  * Created by mhesmkhani on 7/28/2020.
  */
-public abstract class ValidationMaker implements Validation {
+public abstract class UserMiddleware implements Validation, EncryptionUtils{
 
     @Override
     public String UserRegisterValidation(Users users) {
@@ -32,5 +29,22 @@ public abstract class ValidationMaker implements Validation {
         }
 
 
+    }
+
+    @Override
+    public String UserLoginValidation(Users users) {
+        if (users.getEmail().isEmpty() || users.getEmail() == null) {
+            return "email is required";
+        }else if(users.getPassword().isEmpty() || users.getPassword() == null){
+            return "password is required";
+        }else{
+            return "ok";
+        }
+    }
+
+    @Override
+    public String PasswordEncrypt(Users users) {
+        String md5 = DigestUtils.md5Hex(users.getPassword());
+        return DigestUtils.shaHex(md5);
     }
 }
