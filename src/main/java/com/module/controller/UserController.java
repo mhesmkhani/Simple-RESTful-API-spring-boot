@@ -48,7 +48,7 @@ public class UserController extends UserMiddleware {
 
             }else {
                 res.put("message",msg);
-                return ResponseEntity.status(200).body(res);
+                return ResponseEntity.status(403).body(res);
             }
 
         } catch (Exception e) {
@@ -68,6 +68,10 @@ public class UserController extends UserMiddleware {
                 Users user = userRepository.findByEmail(users.getEmail());
                 if(user != null){
                     if(HashPass.equals(user.getPassword())){
+                        String token = userMiddleware.TokenGeneration(121);
+                        user.setToken(token);
+                        userRepository.save(user);
+//                      can you set session here
                         res.put("data",user);
                         return ResponseEntity.status(200).body(res);
                     }else {
