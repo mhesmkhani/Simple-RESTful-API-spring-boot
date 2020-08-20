@@ -12,5 +12,8 @@ import java.util.Optional;
 @Repository
 public interface UserRepository extends JpaRepository<Users,String> {
    Users findByEmail(String email);
-   Users findByPassword(String password);
+   Users findByPhone(String phone);
+   Users findByCode(String code);
+   Users findByToken(String token);
+
 }

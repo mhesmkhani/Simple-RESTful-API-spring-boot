@@ -1,6 +1,6 @@
-package com.module.service;
+package com.module.service.v1;
 
-import com.module.controller.UserController;
+import com.module.controller.v1.UserController;
 import com.module.model.Users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,11 +15,11 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping(path = "/api/users")
-public class UserService extends UserController {
+public class UserServiceV1 extends UserController {
 
-    private UserController userController;
+    private UserServiceV1 userController;
     @Autowired
-    public void setUserController(UserController userController) {
+    public void setUserController(UserServiceV1 userController) {
         this.userController = userController;
     }
 

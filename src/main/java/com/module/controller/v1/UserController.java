@@ -1,11 +1,14 @@
-package com.module.controller;
+package com.module.controller.v1;
 
         import com.module.model.Users;
         import com.module.repository.UserRepository;
         import com.module.middleware.UserMiddleware;
+        import org.slf4j.Logger;
+        import org.slf4j.LoggerFactory;
         import org.springframework.beans.factory.annotation.Autowired;
         import org.springframework.http.ResponseEntity;
 
+        import javax.servlet.http.HttpServletRequest;
         import java.util.HashMap;
         import java.util.Map;
 
@@ -17,6 +20,7 @@ public class UserController extends UserMiddleware {
 
     private UserMiddleware userMiddleware;
     private UserRepository userRepository;
+     Logger LOG = LoggerFactory.getLogger(UserController.class);
 
     @Autowired
     public void setUserMiddleware(UserMiddleware userMiddleware) {
@@ -28,6 +32,7 @@ public class UserController extends UserMiddleware {
         this.userRepository = userRepository;
     }
     public ResponseEntity<Map> RegisterUser(Users users) throws Exception {
+
         Map map = new HashMap();
         try {
             Map res = new HashMap();
@@ -38,8 +43,7 @@ public class UserController extends UserMiddleware {
                     res.put("messsage","The email is Already");
                     return ResponseEntity.status(200).body(res);
                 }
-                users.setPassword(userMiddleware.PasswordEncrypt(users));
-                users.setConfirmPassword(null);
+                users.setPassword(userMiddleware.PasswordEncrypt(users.getPassword()));
                 users.setRole("user");
                 users.setToken(null);
                 userRepository.save(users);
@@ -47,6 +51,7 @@ public class UserController extends UserMiddleware {
                 return ResponseEntity.status(200).body(res);
 
             }else {
+                LOG.info("Logger Test");
                 res.put("message",msg);
                 return ResponseEntity.status(403).body(res);
             }
@@ -63,7 +68,7 @@ public class UserController extends UserMiddleware {
         try {
             Map res = new HashMap();
             String msg = userMiddleware.UserLoginValidation(users);
-            String HashPass = userMiddleware.PasswordEncrypt(users);
+            String HashPass = userMiddleware.PasswordEncrypt(users.getPassword());
             if(msg == "ok"){
                 Users user = userRepository.findByEmail(users.getEmail());
                 if(user != null){

@@ -15,12 +15,9 @@ import java.io.Serializable;
 public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
-    @Column(name = "username")
-    private String username;
 
-    @Column(name = "fullname")
-    private String fullname;
+    @Column(name = "id")
+    private String id;
 
     @Column(name = "email")
     private String email;
@@ -28,8 +25,11 @@ public class Users {
     @Column(name = "password")
     private String password;
 
-    @Column(name = "confirm_password")
-    private String ConfirmPassword;
+    @Column(name = "username")
+    private String username;
+
+    @Column(name = "phone")
+    private String phone;
 
     @Column(name = "role")
     private String role;
@@ -37,15 +37,74 @@ public class Users {
     @Column(name = "token")
     private String token;
 
-    @Column(name = "phone")
-    private String phone;
+    @Column(name = "bio")
+    private String bio;
+
+    @Column(name = "avatar")
+    private String avatar;
 
 
-    public String getConfirmPassword() {
-        return ConfirmPassword;
+    @Column(name = "code")
+    private String code;
+
+    @Column(name = "verified")
+    private String verified;
+
+    @Column(name = "created_at")
+    private String created_at;
+
+
+    @Column(name = "updated_at")
+    private String updated_at;
+
+
+
+    public String getCode() {
+        return code;
     }
-    public void setConfirmPassword(String confirmPassword) {
-        ConfirmPassword = confirmPassword;
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getBio() {
+        return bio;
+    }
+
+    public void setBio(String bio) {
+        this.bio = bio;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
+    public String getVerified() {
+        return verified;
+    }
+
+    public void setVerified(String verified) {
+        this.verified = verified;
+    }
+
+    public String getCreated_at() {
+        return created_at;
+    }
+
+    public void setCreated_at(String created_at) {
+        this.created_at = created_at;
+    }
+
+    public String getUpdated_at() {
+        return updated_at;
+    }
+
+    public void setUpdated_at(String updated_at) {
+        this.updated_at = updated_at;
     }
 
     public String getId() {
@@ -62,14 +121,6 @@ public class Users {
 
     public void setUsername(String username) {
         this.username = username;
-    }
-
-    public String getFullname() {
-        return fullname;
-    }
-
-    public void setFullname(String fullname) {
-        this.fullname = fullname;
     }
 
     public String getEmail() {
