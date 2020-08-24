@@ -98,10 +98,10 @@ public class UserController extends UserMiddleware {
     public ResponseEntity<Map> VerificationCode(HttpServletRequest request, Users users) throws Exception {
         Map map = new HashMap();
         try {
-            String code = request.getParameter("code");
             DateTimeFormatter date = DateTimeFormatter.ofPattern("yyyy/MM/dd ");
             DateTimeFormatter curentTime = DateTimeFormatter.ofPattern("HH:mm:ss");
             LocalDateTime now = LocalDateTime.now();
+            String code = request.getParameter("code");
             String token = userMiddleware.TokenGeneration(121);
             Map res = new HashMap();
             Users user = userRepository.findByCode(code);
@@ -130,17 +130,57 @@ public class UserController extends UserMiddleware {
     public ResponseEntity<Map> ModifyUser(HttpServletRequest request, Users users) throws Exception {
         Map map = new HashMap();
         try {
+            DateTimeFormatter date = DateTimeFormatter.ofPattern("yyyy/MM/dd ");
+            DateTimeFormatter curentTime = DateTimeFormatter.ofPattern("HH:mm:ss");
+            LocalDateTime now = LocalDateTime.now();
             Map res = new HashMap();
             String token = request.getHeader("Authorization");
             Users user = userRepository.findByToken(token);
-            if (user != null) {
-
-            } else {
-                res.put("message", "token is invalid");
+            if (token == null) {
+                res.put("message", "incorrect request");
                 return ResponseEntity.status(403).body(res);
+            } else {
+                if (user != null) {
+                    Users findByEmail = userRepository.findByEmail(users.getEmail());
+                    Users findByUsername = userRepository.findByUsername(users.getUsername());
+                    String msg = userMiddleware.FindByUserAndEmail(findByEmail, findByUsername);
+                    if (msg == "ok") {
+                        if (users.getEmail().isEmpty()) {
+                            user.setEmail(user.getEmail());
+                            user.setUsername(users.getUsername());
+                            user.setUpdated_at(date.format(PersianDate.now()) + curentTime.format(now));
+                            userRepository.save(user);
+                            res.put("message", "success");
+                            res.put("status", "username is updated");
+                            return ResponseEntity.status(200).body(res);
+                        } else if (users.getUsername().isEmpty()) {
+                            user.setEmail(users.getEmail());
+                            user.setUsername(user.getUsername());
+                            user.setUpdated_at(date.format(PersianDate.now()) + curentTime.format(now));
+                            userRepository.save(user);
+                            res.put("message", "success");
+                            res.put("status", "email is updated");
+                            return ResponseEntity.status(200).body(res);
+                        } else {
+                            user.setEmail(users.getEmail());
+                            user.setUsername(users.getUsername());
+                            user.setUpdated_at(date.format(PersianDate.now()) + curentTime.format(now));
+                            userRepository.save(user);
+                            res.put("message", "success");
+                            return ResponseEntity.status(200).body(res);
+                        }
+
+                    } else {
+                        res.put("message", msg);
+                        return ResponseEntity.status(403).body(res);
+                    }
+
+                } else {
+                    res.put("message", "token is invalid");
+                    return ResponseEntity.status(403).body(res);
+                }
             }
 
-            return ResponseEntity.status(200).body(res);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -158,32 +198,34 @@ public class UserController extends UserMiddleware {
             DateTimeFormatter date = DateTimeFormatter.ofPattern("yyyy/MM/dd ");
             DateTimeFormatter curentTime = DateTimeFormatter.ofPattern("HH:mm:ss");
             LocalDateTime now = LocalDateTime.now();
-
-            if (user != null) {
-                String msg = userMiddleware.PasswordValidation(users, request);
-                if (msg == "ok") {
-                    if (user.getPassword() == null || user.getPassword().isEmpty()) {
-                        user.setPassword(userMiddleware.PasswordEncrypt(users.getPassword()));
-                        user.setUpdated_at(date.format(PersianDate.now()) + curentTime.format(now));
-                        userRepository.save(user);
-                        res.put("message", "success");
-                        return ResponseEntity.status(200).body(res);
+            if (token == null) {
+                res.put("message", "incorrect request");
+                return ResponseEntity.status(403).body(res);
+            } else {
+                if (user != null) {
+                    String msg = userMiddleware.PasswordValidation(users, request);
+                    if (msg == "ok") {
+                        if (user.getPassword() == null || user.getPassword().isEmpty()) {
+                            user.setPassword(userMiddleware.PasswordEncrypt(users.getPassword()));
+                            user.setUpdated_at(date.format(PersianDate.now()) + curentTime.format(now));
+                            userRepository.save(user);
+                            res.put("message", "success");
+                            return ResponseEntity.status(200).body(res);
+                        } else {
+                            res.put("message", "don't accessibility ");
+                            return ResponseEntity.status(403).body(res);
+                        }
                     } else {
-                        res.put("message", "don't accessibility ");
+                        res.put("message", msg);
                         return ResponseEntity.status(403).body(res);
                     }
                 } else {
-                    res.put("message", msg);
+                    res.put("message", "token is invalid");
                     return ResponseEntity.status(403).body(res);
                 }
-            } else {
-                res.put("message", "token is invalid");
-                return ResponseEntity.status(403).body(res);
             }
-        } catch (
-                Exception e)
 
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         map.put("message", "The value of one of the fields is empty");
@@ -194,35 +236,104 @@ public class UserController extends UserMiddleware {
     public ResponseEntity<Map> ModifyPassword(HttpServletRequest request) throws Exception {
         Map map = new HashMap();
         try {
+            DateTimeFormatter date = DateTimeFormatter.ofPattern("yyyy/MM/dd ");
+            DateTimeFormatter curentTime = DateTimeFormatter.ofPattern("HH:mm:ss");
+            LocalDateTime now = LocalDateTime.now();
             Map res = new HashMap();
             String token = request.getHeader("Authorization");
             Users user = userRepository.findByToken(token);
             String HashPass = userMiddleware.PasswordEncrypt(request.getParameter("password"));
             String ConfirmNewPassword = userMiddleware.PasswordEncrypt(request.getParameter("confirm_new_password"));
-            DateTimeFormatter date = DateTimeFormatter.ofPattern("yyyy/MM/dd ");
-            DateTimeFormatter curentTime = DateTimeFormatter.ofPattern("HH:mm:ss");
-            LocalDateTime now = LocalDateTime.now();
+            if (token == null) {
+                res.put("message", "incorrect request");
+                return ResponseEntity.status(403).body(res);
+            } else {
+                if (user != null) {
+                    if (HashPass.equals(user.getPassword())) {
+                        String msg = userMiddleware.PasswordModifyValidation(request);
+                        if (msg == "ok") {
+                            user.setPassword(ConfirmNewPassword);
+                            user.setUpdated_at(date.format(PersianDate.now()) + curentTime.format(now));
+                            userRepository.save(user);
+                            res.put("message", "success");
+                            return ResponseEntity.status(200).body(res);
+                        } else {
+                            res.put("message", msg);
+                            return ResponseEntity.status(403).body(res);
+                        }
+                    } else {
+                        res.put("message", "current password is incorrect");
+                        return ResponseEntity.status(403).body(res);
+                    }
 
+                } else {
+                    res.put("message", "token is invalid");
+                    return ResponseEntity.status(403).body(res);
+                }
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        map.put("message", "The value of one of the fields is empty");
+        return ResponseEntity.status(403).body(map);
+    }
+
+    public ResponseEntity<Map> UserLogout(HttpServletRequest request) throws Exception {
+        Map map = new HashMap();
+        try {
+            Map res = new HashMap();
+            String token = request.getHeader("Authorization");
+            Users user = userRepository.findByToken(token);
+            if (token == null) {
+                res.put("message", "incorrect request");
+                return ResponseEntity.status(403).body(res);
+            } else {
+                if (user != null) {
+                    user.setToken(null);
+                    userRepository.save(user);
+                    res.put("message", "success");
+                    return ResponseEntity.status(200).body(res);
+                } else {
+                    res.put("message", "error");
+                    return ResponseEntity.status(403).body(res);
+                }
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        map.put("message", "The value of one of the fields is empty");
+        return ResponseEntity.status(403).body(map);
+    }
+
+    public ResponseEntity<Map> UserLogin(Users users) throws Exception {
+        Map map = new HashMap();
+        try {
+            Map res = new HashMap();
+            Users user = userRepository.findByPhone("+98" + users.getPhone());
             if (user != null) {
-                if (HashPass.equals(user.getPassword())) {
-                    String msg = userMiddleware.PasswordModifyValidation(request);
-                    if (msg == "ok") {
-                        user.setPassword(ConfirmNewPassword);
-                        user.setUpdated_at(date.format(PersianDate.now()) + curentTime.format(now));
+                String msg = userMiddleware.UserLoginValidation(users);
+                String HashPass = userMiddleware.PasswordEncrypt(users.getPassword());
+                String token = userMiddleware.TokenGeneration(121);
+                if (msg == "ok") {
+                    if (user.getPassword().equals(HashPass)) {
+                        user.setToken(token);
                         userRepository.save(user);
                         res.put("message", "success");
+                        res.put("data", user);
                         return ResponseEntity.status(200).body(res);
                     } else {
-                        res.put("message", msg);
+                        res.put("message", "error");
                         return ResponseEntity.status(403).body(res);
                     }
                 } else {
-                    res.put("message", "current password is incorrect");
+                    res.put("message", msg);
                     return ResponseEntity.status(403).body(res);
                 }
 
             } else {
-                res.put("message", "token is invalid");
+                res.put("message", "error");
                 return ResponseEntity.status(403).body(res);
             }
         } catch (Exception e) {

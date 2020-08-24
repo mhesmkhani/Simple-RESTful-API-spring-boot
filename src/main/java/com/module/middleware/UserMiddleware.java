@@ -53,8 +53,8 @@ public abstract class UserMiddleware implements Validation, EncryptionUtils, Com
 
     @Override
     public String UserLoginValidation(Users users) {
-        if (users.getEmail().isEmpty() || users.getEmail() == null) {
-            return "email is required";
+        if (users.getPhone().isEmpty() || users.getPhone() == null) {
+            return "phone is required";
         } else if (users.getPassword().isEmpty() || users.getPassword() == null) {
             return "password is required";
         } else {
@@ -107,4 +107,21 @@ public abstract class UserMiddleware implements Validation, EncryptionUtils, Com
             return  "ok";
         }
     }
+
+    @Override
+    public String UserModifyValidation(Users users) {
+      return null;
+    }
+
+    @Override
+    public String FindByUserAndEmail(Users email, Users username) {
+       if(email != null){
+           return "email is already!";
+       }else if (username != null){
+           return "username is already";
+       }else {
+           return "ok";
+       }
+    }
+
 }

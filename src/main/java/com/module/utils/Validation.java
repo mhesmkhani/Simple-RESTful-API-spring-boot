@@ -16,6 +16,8 @@ public interface Validation {
 //     V2 services Validations
 
      String UserPhoneNumberValidation(Users users);
+     String UserModifyValidation(Users users);
+     String FindByUserAndEmail(Users email, Users username);
      String PasswordValidation(Users users, HttpServletRequest request);
      String PasswordModifyValidation(HttpServletRequest request);
 
