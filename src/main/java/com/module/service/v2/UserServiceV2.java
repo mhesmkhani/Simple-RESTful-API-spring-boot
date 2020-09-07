@@ -19,7 +19,7 @@ import java.util.Map;
 @RequestMapping(path = "/api/v2/user")
 public class UserServiceV2 extends UserController {
 
-    private UserServiceV2 userController;
+    private UserController userController;
     @Autowired
     public void setUserController(UserServiceV2 userController) {
         this.userController = userController;

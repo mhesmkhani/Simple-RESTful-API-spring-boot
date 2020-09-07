@@ -3,7 +3,7 @@ package com.module.middleware;
 import com.module.model.Users;
 import com.module.utils.CommonUtils;
 import com.module.utils.EncryptionUtils;
-import com.module.utils.Validation;
+import com.module.utils.UserValidation;
 import org.apache.commons.codec.digest.DigestUtils;
 
 import javax.servlet.http.HttpServletRequest;
@@ -12,7 +12,7 @@ import java.util.Random;
 /**
  * Created by mhesmkhani on 7/28/2020.
  */
-public abstract class UserMiddleware implements Validation, EncryptionUtils, CommonUtils {
+public abstract class UserMiddleware implements UserValidation, EncryptionUtils, CommonUtils {
 
     @Override
     public String GenerateVerificationCode() {

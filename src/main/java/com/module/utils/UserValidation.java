@@ -1,5 +1,6 @@
 package com.module.utils;
 
+import com.module.model.Todos;
 import com.module.model.Users;
 import org.apache.catalina.User;
 
@@ -8,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * Created by mhesmkhani on 7/28/2020.
  */
-public interface Validation {
+public interface UserValidation {
 
      String UserRegisterValidation(Users users);
      String UserLoginValidation(Users users);
@@ -20,6 +21,7 @@ public interface Validation {
      String FindByUserAndEmail(Users email, Users username);
      String PasswordValidation(Users users, HttpServletRequest request);
      String PasswordModifyValidation(HttpServletRequest request);
+
 
 
 }

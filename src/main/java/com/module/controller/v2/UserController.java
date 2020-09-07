@@ -188,7 +188,6 @@ public class UserController extends UserMiddleware {
         return ResponseEntity.status(403).body(map);
     }
 
-
     public ResponseEntity<Map> MakePassword(HttpServletRequest request, Users users) throws Exception {
         Map map = new HashMap();
         try {
