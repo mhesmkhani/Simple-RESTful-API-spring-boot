@@ -38,17 +38,27 @@ public class TodoServiceV2  extends TodoController{
     @GetMapping(path = "/GetTodo")
      public ResponseEntity<Map> GetTodo(HttpServletRequest request, Todos todos) throws Exception{
          try {
-             return todoController.Index(request,todos);
+             return todoController.All(request,todos);
          }catch (Exception e){
              e.printStackTrace();
          }
          return null;
      }
 
-    @GetMapping(path = "{id}")
+    @PutMapping(path = "{id}")
     public ResponseEntity<Map> UpdateTodo(HttpServletRequest request, Todos todos,@PathVariable("id") String id) throws Exception{
         try {
             return todoController.Update(request,todos,id);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @GetMapping(path = "{id}")
+    public ResponseEntity<Map> GetIndex(HttpServletRequest request,@PathVariable("id") String id) throws Exception{
+        try {
+            return todoController.Index(request,id);
         }catch (Exception e){
             e.printStackTrace();
         }

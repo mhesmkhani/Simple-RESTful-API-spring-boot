@@ -81,7 +81,7 @@ public class TodoController extends TodoMiddleware {
     }
 
 
-    public ResponseEntity<Map> Index(HttpServletRequest request, Todos todos) throws Exception {
+    public ResponseEntity<Map> All(HttpServletRequest request, Todos todos) throws Exception {
         Map map = new HashMap();
         try {
 
@@ -110,7 +110,39 @@ public class TodoController extends TodoMiddleware {
         map.put("message", "The value of one of the fields is empty");
         return ResponseEntity.status(403).body(map);
     }
+    public ResponseEntity<Map> Index(HttpServletRequest request ,@PathVariable("id") String id) throws Exception {
+        Map map = new HashMap();
+        try {
+            Map res = new HashMap();
+            String token = request.getHeader("Authorization");
+            if (token == null) {
+                res.put("message", "incorrect request");
+                return ResponseEntity.status(403).body(res);
+            } else {
+                Users user = userRepository.findByToken(token);
+                if (user != null) {
+                   Optional<Todos> todo = todoRepository.findById(id);
+                    if(todo.get().getUserId().equals(user.getId())){
+                        res.put("message", "success");
+                        res.put("data", todo);
+                        return ResponseEntity.status(200).body(res);
+                    }else {
+                        res.put("message", "doesn't accessibility");
+                        return ResponseEntity.status(403).body(res);
+                    }
 
+                } else {
+                    res.put("message", "token is invalid");
+                    return ResponseEntity.status(200).body(res);
+                }
+
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        map.put("message", "The value of one of the fields is empty");
+        return ResponseEntity.status(403).body(map);
+    }
     public ResponseEntity<Map> Update(HttpServletRequest request, Todos todos ,@PathVariable("id") String id) throws Exception {
         Map map = new HashMap();
         try {
@@ -129,7 +161,8 @@ public class TodoController extends TodoMiddleware {
                     if(todo.get().getUserId().equals(user.getId())){
                         String msg = todoMiddleware.TodosValidation(todos);
                         if(msg == "ok"){
-                            if(todos.getDiscareption().isEmpty()){
+                            String putData = todoMiddleware.putData(todos);
+                            if(putData == "discareptionEmpty"){
                                 todos.setUserId(user.getId());
                                 todos.setIsdone(todo.get().getIsdone());
                                 todos.setCreated_at(todo.get().getCreated_at());

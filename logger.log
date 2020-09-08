@@ -1,290 +1,87 @@
-2020-09-07 09:15:09.513  INFO 22684 --- [main] com.module.SpringUtilsApplication        : Starting SpringUtilsApplication on DESKTOP-E0G63CJ with PID 22684 (E:\workspace\spring\spring-utils\target\classes started by mhesmkhani in E:\workspace\spring\spring-utils)
-2020-09-07 09:15:09.520  INFO 22684 --- [main] com.module.SpringUtilsApplication        : No active profile set, falling back to default profiles: default
-2020-09-07 09:15:10.124  INFO 22684 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
-2020-09-07 09:15:10.183  INFO 22684 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 52ms. Found 2 JPA repository interfaces.
-2020-09-07 09:15:10.776  INFO 22684 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 1000 (http)
-2020-09-07 09:15:10.784  INFO 22684 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-09-07 09:15:10.784  INFO 22684 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
-2020-09-07 09:15:10.886  INFO 22684 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-09-07 09:15:10.886  INFO 22684 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1328 ms
-2020-09-07 09:15:11.127  INFO 22684 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-09-07 09:15:11.134  INFO 22684 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-09-07 09:15:11.489  INFO 22684 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-09-07 09:15:11.535  INFO 22684 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+2020-09-08 11:12:43.398  INFO 18428 --- [main] com.module.SpringUtilsApplication        : Starting SpringUtilsApplication on DESKTOP-E0G63CJ with PID 18428 (E:\workspace\spring\spring-utils\target\classes started by mhesmkhani in E:\workspace\spring\spring-utils)
+2020-09-08 11:12:43.406  INFO 18428 --- [main] com.module.SpringUtilsApplication        : No active profile set, falling back to default profiles: default
+2020-09-08 11:12:44.033  INFO 18428 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-09-08 11:12:44.099  INFO 18428 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57ms. Found 2 JPA repository interfaces.
+2020-09-08 11:12:44.742  INFO 18428 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 1000 (http)
+2020-09-08 11:12:44.752  INFO 18428 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-09-08 11:12:44.752  INFO 18428 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-08 11:12:44.865  INFO 18428 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-09-08 11:12:44.865  INFO 18428 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1416 ms
+2020-09-08 11:12:45.124  INFO 18428 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-08 11:12:45.131  INFO 18428 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-09-08 11:12:45.583  INFO 18428 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-09-08 11:12:45.640  INFO 18428 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
 	name: default
 	...]
-2020-09-07 09:15:11.588  WARN 22684 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-09-07 09:15:11.629  INFO 22684 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
-2020-09-07 09:15:11.630  INFO 22684 --- [task-1] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2020-09-07 09:15:11.824  INFO 22684 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2020-09-07 09:15:11.915  INFO 22684 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 1000 (http) with context path ''
-2020-09-07 09:15:11.916  INFO 22684 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
-2020-09-07 09:15:11.952  INFO 22684 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
-2020-09-07 09:15:12.489  INFO 22684 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-09-07 09:15:12.744  INFO 22684 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
-2020-09-07 09:15:12.749  INFO 22684 --- [main] com.module.SpringUtilsApplication        : Started SpringUtilsApplication in 3.59 seconds (JVM running for 3.939)
-2020-09-07 09:15:19.532  INFO 22684 --- [http-nio-1000-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-09-07 09:15:19.532  INFO 22684 --- [http-nio-1000-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-09-07 09:15:19.549  INFO 22684 --- [http-nio-1000-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 17 ms
-2020-09-07 09:15:19.616  INFO 22684 --- [http-nio-1000-exec-2] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
-2020-09-07 09:46:11.839  INFO 11768 --- [main] com.module.SpringUtilsApplication        : Starting SpringUtilsApplication on DESKTOP-E0G63CJ with PID 11768 (E:\workspace\spring\spring-utils\target\classes started by mhesmkhani in E:\workspace\spring\spring-utils)
-2020-09-07 09:46:11.841  INFO 11768 --- [main] com.module.SpringUtilsApplication        : No active profile set, falling back to default profiles: default
-2020-09-07 09:46:12.386  INFO 11768 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
-2020-09-07 09:46:12.447  INFO 11768 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50ms. Found 2 JPA repository interfaces.
-2020-09-07 09:46:13.011  INFO 11768 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 1000 (http)
-2020-09-07 09:46:13.019  INFO 11768 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-09-07 09:46:13.019  INFO 11768 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
-2020-09-07 09:46:13.126  INFO 11768 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-09-07 09:46:13.126  INFO 11768 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1244 ms
-2020-09-07 09:46:13.337  INFO 11768 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-09-07 09:46:13.345  INFO 11768 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-09-07 09:46:13.695  INFO 11768 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-09-07 09:46:13.737  INFO 11768 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+2020-09-08 11:12:45.693  WARN 18428 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-09-08 11:12:45.739  INFO 18428 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2020-09-08 11:12:45.740  INFO 18428 --- [task-1] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2020-09-08 11:12:45.944  INFO 18428 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-09-08 11:12:46.053  INFO 18428 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 1000 (http) with context path ''
+2020-09-08 11:12:46.093  INFO 18428 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-09-08 11:12:46.100  INFO 18428 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2020-09-08 11:12:46.603  INFO 18428 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-09-08 11:12:46.857  INFO 18428 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-09-08 11:12:46.861  INFO 18428 --- [main] com.module.SpringUtilsApplication        : Started SpringUtilsApplication in 3.867 seconds (JVM running for 4.327)
+2020-09-08 11:13:21.084  INFO 18428 --- [http-nio-1000-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-08 11:13:21.084  INFO 18428 --- [http-nio-1000-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-09-08 11:13:21.089  INFO 18428 --- [http-nio-1000-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2020-09-08 11:13:21.142  INFO 18428 --- [http-nio-1000-exec-2] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2020-09-08 11:15:01.244  INFO 19860 --- [main] com.module.SpringUtilsApplication        : Starting SpringUtilsApplication on DESKTOP-E0G63CJ with PID 19860 (E:\workspace\spring\spring-utils\target\classes started by mhesmkhani in E:\workspace\spring\spring-utils)
+2020-09-08 11:15:01.246  INFO 19860 --- [main] com.module.SpringUtilsApplication        : No active profile set, falling back to default profiles: default
+2020-09-08 11:15:01.771  INFO 19860 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-09-08 11:15:01.829  INFO 19860 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49ms. Found 2 JPA repository interfaces.
+2020-09-08 11:15:02.383  INFO 19860 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 1000 (http)
+2020-09-08 11:15:02.390  INFO 19860 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-09-08 11:15:02.391  INFO 19860 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-08 11:15:02.494  INFO 19860 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-09-08 11:15:02.494  INFO 19860 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1212 ms
+2020-09-08 11:15:02.700  INFO 19860 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-08 11:15:02.707  INFO 19860 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-09-08 11:15:03.044  INFO 19860 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-09-08 11:15:03.085  INFO 19860 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
 	name: default
 	...]
-2020-09-07 09:46:13.788  WARN 11768 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-09-07 09:46:13.797  INFO 11768 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
-2020-09-07 09:46:13.799  INFO 11768 --- [task-1] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2020-09-07 09:46:13.942  INFO 11768 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2020-09-07 09:46:14.048  INFO 11768 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
-2020-09-07 09:46:14.155  INFO 11768 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 1000 (http) with context path ''
-2020-09-07 09:46:14.156  INFO 11768 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
-2020-09-07 09:46:14.541  INFO 11768 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-09-07 09:46:14.784  INFO 11768 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
-2020-09-07 09:46:14.788  INFO 11768 --- [main] com.module.SpringUtilsApplication        : Started SpringUtilsApplication in 3.279 seconds (JVM running for 3.607)
-2020-09-07 09:47:15.655  INFO 11768 --- [http-nio-1000-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-09-07 09:47:15.655  INFO 11768 --- [http-nio-1000-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-09-07 09:47:15.672  INFO 11768 --- [http-nio-1000-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 17 ms
-2020-09-07 09:47:15.722  INFO 11768 --- [http-nio-1000-exec-2] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
-2020-09-07 09:48:59.429  INFO 12604 --- [main] com.module.SpringUtilsApplication        : Starting SpringUtilsApplication on DESKTOP-E0G63CJ with PID 12604 (E:\workspace\spring\spring-utils\target\classes started by mhesmkhani in E:\workspace\spring\spring-utils)
-2020-09-07 09:48:59.432  INFO 12604 --- [main] com.module.SpringUtilsApplication        : No active profile set, falling back to default profiles: default
-2020-09-07 09:49:00.000  INFO 12604 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
-2020-09-07 09:49:00.077  INFO 12604 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 63ms. Found 2 JPA repository interfaces.
-2020-09-07 09:49:00.656  INFO 12604 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 1000 (http)
-2020-09-07 09:49:00.663  INFO 12604 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-09-07 09:49:00.663  INFO 12604 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
-2020-09-07 09:49:00.771  INFO 12604 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-09-07 09:49:00.771  INFO 12604 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1304 ms
-2020-09-07 09:49:00.981  INFO 12604 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-09-07 09:49:00.987  INFO 12604 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-09-07 09:49:01.369  INFO 12604 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-09-07 09:49:01.410  INFO 12604 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+2020-09-08 11:15:03.139  WARN 19860 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-09-08 11:15:03.143  INFO 19860 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2020-09-08 11:15:03.144  INFO 19860 --- [task-1] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2020-09-08 11:15:03.285  INFO 19860 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-09-08 11:15:03.393  INFO 19860 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2020-09-08 11:15:03.500  INFO 19860 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 1000 (http) with context path ''
+2020-09-08 11:15:03.501  INFO 19860 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-09-08 11:15:03.862  INFO 19860 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-09-08 11:15:04.095  INFO 19860 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-09-08 11:15:04.100  INFO 19860 --- [main] com.module.SpringUtilsApplication        : Started SpringUtilsApplication in 3.164 seconds (JVM running for 3.494)
+2020-09-08 11:15:08.013  INFO 19860 --- [http-nio-1000-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-08 11:15:08.013  INFO 19860 --- [http-nio-1000-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-09-08 11:15:08.017  INFO 19860 --- [http-nio-1000-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2020-09-08 11:15:08.087  INFO 19860 --- [http-nio-1000-exec-2] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2020-09-08 11:21:34.931  INFO 23320 --- [main] com.module.SpringUtilsApplication        : Starting SpringUtilsApplication on DESKTOP-E0G63CJ with PID 23320 (E:\workspace\spring\spring-utils\target\classes started by mhesmkhani in E:\workspace\spring\spring-utils)
+2020-09-08 11:21:34.933  INFO 23320 --- [main] com.module.SpringUtilsApplication        : No active profile set, falling back to default profiles: default
+2020-09-08 11:21:35.460  INFO 23320 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-09-08 11:21:35.519  INFO 23320 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49ms. Found 2 JPA repository interfaces.
+2020-09-08 11:21:36.168  INFO 23320 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 1000 (http)
+2020-09-08 11:21:36.175  INFO 23320 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-09-08 11:21:36.175  INFO 23320 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-08 11:21:36.283  INFO 23320 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-09-08 11:21:36.283  INFO 23320 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1308 ms
+2020-09-08 11:21:36.490  INFO 23320 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-08 11:21:36.497  INFO 23320 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-09-08 11:21:36.841  INFO 23320 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-09-08 11:21:36.885  INFO 23320 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
 	name: default
 	...]
-2020-09-07 09:49:01.461  WARN 12604 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-09-07 09:49:01.467  INFO 12604 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
-2020-09-07 09:49:01.468  INFO 12604 --- [task-1] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2020-09-07 09:49:01.609  INFO 12604 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2020-09-07 09:49:01.705  INFO 12604 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
-2020-09-07 09:49:01.776  INFO 12604 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 1000 (http) with context path ''
-2020-09-07 09:49:01.778  INFO 12604 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
-2020-09-07 09:49:02.282  INFO 12604 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-09-07 09:49:02.520  INFO 12604 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
-2020-09-07 09:49:02.525  INFO 12604 --- [main] com.module.SpringUtilsApplication        : Started SpringUtilsApplication in 3.402 seconds (JVM running for 3.8)
-2020-09-07 09:49:04.321  INFO 12604 --- [http-nio-1000-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-09-07 09:49:04.321  INFO 12604 --- [http-nio-1000-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-09-07 09:49:04.326  INFO 12604 --- [http-nio-1000-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2020-09-07 09:49:04.479  INFO 12604 --- [http-nio-1000-exec-3] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
-2020-09-07 09:58:05.216  INFO 18572 --- [main] com.module.SpringUtilsApplication        : Starting SpringUtilsApplication on DESKTOP-E0G63CJ with PID 18572 (E:\workspace\spring\spring-utils\target\classes started by mhesmkhani in E:\workspace\spring\spring-utils)
-2020-09-07 09:58:05.218  INFO 18572 --- [main] com.module.SpringUtilsApplication        : No active profile set, falling back to default profiles: default
-2020-09-07 09:58:05.824  INFO 18572 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
-2020-09-07 09:58:05.887  INFO 18572 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54ms. Found 2 JPA repository interfaces.
-2020-09-07 09:58:06.492  INFO 18572 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 1000 (http)
-2020-09-07 09:58:06.500  INFO 18572 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-09-07 09:58:06.500  INFO 18572 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
-2020-09-07 09:58:06.605  INFO 18572 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-09-07 09:58:06.605  INFO 18572 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1347 ms
-2020-09-07 09:58:06.816  INFO 18572 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-09-07 09:58:06.822  INFO 18572 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-09-07 09:58:07.165  INFO 18572 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-09-07 09:58:07.207  INFO 18572 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2020-09-07 09:58:07.255  WARN 18572 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-09-07 09:58:07.264  INFO 18572 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
-2020-09-07 09:58:07.265  INFO 18572 --- [task-1] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2020-09-07 09:58:07.428  INFO 18572 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2020-09-07 09:58:07.527  INFO 18572 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
-2020-09-07 09:58:07.600  INFO 18572 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 1000 (http) with context path ''
-2020-09-07 09:58:07.602  INFO 18572 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
-2020-09-07 09:58:08.017  INFO 18572 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-09-07 09:58:08.254  INFO 18572 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
-2020-09-07 09:58:08.259  INFO 18572 --- [main] com.module.SpringUtilsApplication        : Started SpringUtilsApplication in 3.404 seconds (JVM running for 3.724)
-2020-09-07 09:58:13.952  INFO 18572 --- [http-nio-1000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-09-07 09:58:13.952  INFO 18572 --- [http-nio-1000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-09-07 09:58:13.956  INFO 18572 --- [http-nio-1000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2020-09-07 09:58:14.006  INFO 18572 --- [http-nio-1000-exec-1] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
-2020-09-07 09:58:34.422  INFO 19708 --- [main] com.module.SpringUtilsApplication        : Starting SpringUtilsApplication on DESKTOP-E0G63CJ with PID 19708 (E:\workspace\spring\spring-utils\target\classes started by mhesmkhani in E:\workspace\spring\spring-utils)
-2020-09-07 09:58:34.424  INFO 19708 --- [main] com.module.SpringUtilsApplication        : No active profile set, falling back to default profiles: default
-2020-09-07 09:58:34.952  INFO 19708 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
-2020-09-07 09:58:35.012  INFO 19708 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50ms. Found 2 JPA repository interfaces.
-2020-09-07 09:58:35.666  INFO 19708 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 1000 (http)
-2020-09-07 09:58:35.674  INFO 19708 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-09-07 09:58:35.674  INFO 19708 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
-2020-09-07 09:58:35.781  INFO 19708 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-09-07 09:58:35.781  INFO 19708 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1322 ms
-2020-09-07 09:58:36.015  INFO 19708 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-09-07 09:58:36.022  INFO 19708 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-09-07 09:58:36.365  INFO 19708 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-09-07 09:58:36.406  INFO 19708 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2020-09-07 09:58:36.456  WARN 19708 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-09-07 09:58:36.488  INFO 19708 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
-2020-09-07 09:58:36.499  INFO 19708 --- [task-1] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2020-09-07 09:58:36.736  INFO 19708 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2020-09-07 09:58:36.845  INFO 19708 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
-2020-09-07 09:58:36.890  INFO 19708 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 1000 (http) with context path ''
-2020-09-07 09:58:36.934  INFO 19708 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
-2020-09-07 09:58:37.329  INFO 19708 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-09-07 09:58:37.566  INFO 19708 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
-2020-09-07 09:58:37.571  INFO 19708 --- [main] com.module.SpringUtilsApplication        : Started SpringUtilsApplication in 3.474 seconds (JVM running for 3.795)
-2020-09-07 09:58:38.363  INFO 19708 --- [http-nio-1000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-09-07 09:58:38.363  INFO 19708 --- [http-nio-1000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-09-07 09:58:38.368  INFO 19708 --- [http-nio-1000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
-2020-09-07 09:58:38.428  INFO 19708 --- [http-nio-1000-exec-1] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
-2020-09-07 10:00:03.497  INFO 12972 --- [main] com.module.SpringUtilsApplication        : Starting SpringUtilsApplication on DESKTOP-E0G63CJ with PID 12972 (E:\workspace\spring\spring-utils\target\classes started by mhesmkhani in E:\workspace\spring\spring-utils)
-2020-09-07 10:00:03.499  INFO 12972 --- [main] com.module.SpringUtilsApplication        : No active profile set, falling back to default profiles: default
-2020-09-07 10:00:04.052  INFO 12972 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
-2020-09-07 10:00:04.111  INFO 12972 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49ms. Found 2 JPA repository interfaces.
-2020-09-07 10:00:04.672  INFO 12972 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 1000 (http)
-2020-09-07 10:00:04.679  INFO 12972 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-09-07 10:00:04.679  INFO 12972 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
-2020-09-07 10:00:04.790  INFO 12972 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-09-07 10:00:04.790  INFO 12972 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1253 ms
-2020-09-07 10:00:04.996  INFO 12972 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-09-07 10:00:05.003  INFO 12972 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-09-07 10:00:05.345  INFO 12972 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-09-07 10:00:05.385  INFO 12972 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2020-09-07 10:00:05.436  WARN 12972 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-09-07 10:00:05.449  INFO 12972 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
-2020-09-07 10:00:05.450  INFO 12972 --- [task-1] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2020-09-07 10:00:05.594  INFO 12972 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2020-09-07 10:00:05.698  INFO 12972 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
-2020-09-07 10:00:05.746  INFO 12972 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 1000 (http) with context path ''
-2020-09-07 10:00:05.748  INFO 12972 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
-2020-09-07 10:00:06.174  INFO 12972 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-09-07 10:00:06.407  INFO 12972 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
-2020-09-07 10:00:06.412  INFO 12972 --- [main] com.module.SpringUtilsApplication        : Started SpringUtilsApplication in 3.226 seconds (JVM running for 3.557)
-2020-09-07 10:00:11.111  INFO 12972 --- [http-nio-1000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-09-07 10:00:11.111  INFO 12972 --- [http-nio-1000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-09-07 10:00:11.115  INFO 12972 --- [http-nio-1000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2020-09-07 10:00:11.176  INFO 12972 --- [http-nio-1000-exec-1] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
-2020-09-07 10:14:39.156  INFO 6424 --- [main] com.module.SpringUtilsApplication        : Starting SpringUtilsApplication on DESKTOP-E0G63CJ with PID 6424 (E:\workspace\spring\spring-utils\target\classes started by mhesmkhani in E:\workspace\spring\spring-utils)
-2020-09-07 10:14:39.158  INFO 6424 --- [main] com.module.SpringUtilsApplication        : No active profile set, falling back to default profiles: default
-2020-09-07 10:14:39.703  INFO 6424 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
-2020-09-07 10:14:39.766  INFO 6424 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 53ms. Found 2 JPA repository interfaces.
-2020-09-07 10:14:40.330  INFO 6424 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 1000 (http)
-2020-09-07 10:14:40.338  INFO 6424 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-09-07 10:14:40.338  INFO 6424 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
-2020-09-07 10:14:40.463  INFO 6424 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-09-07 10:14:40.463  INFO 6424 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1271 ms
-2020-09-07 10:14:40.715  INFO 6424 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-09-07 10:14:40.721  INFO 6424 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-09-07 10:14:41.072  INFO 6424 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-09-07 10:14:41.113  INFO 6424 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2020-09-07 10:14:41.165  WARN 6424 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-09-07 10:14:41.177  INFO 6424 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
-2020-09-07 10:14:41.179  INFO 6424 --- [task-1] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2020-09-07 10:14:41.327  INFO 6424 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2020-09-07 10:14:41.423  INFO 6424 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
-2020-09-07 10:14:41.526  INFO 6424 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 1000 (http) with context path ''
-2020-09-07 10:14:41.528  INFO 6424 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
-2020-09-07 10:14:42.004  INFO 6424 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-09-07 10:14:42.249  INFO 6424 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
-2020-09-07 10:14:42.254  INFO 6424 --- [main] com.module.SpringUtilsApplication        : Started SpringUtilsApplication in 3.415 seconds (JVM running for 3.741)
-2020-09-07 10:15:18.521  INFO 6424 --- [http-nio-1000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-09-07 10:15:18.521  INFO 6424 --- [http-nio-1000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-09-07 10:15:18.527  INFO 6424 --- [http-nio-1000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
-2020-09-07 10:15:18.599  INFO 6424 --- [http-nio-1000-exec-1] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
-2020-09-07 10:20:34.843  INFO 17480 --- [main] com.module.SpringUtilsApplication        : Starting SpringUtilsApplication on DESKTOP-E0G63CJ with PID 17480 (E:\workspace\spring\spring-utils\target\classes started by mhesmkhani in E:\workspace\spring\spring-utils)
-2020-09-07 10:20:34.845  INFO 17480 --- [main] com.module.SpringUtilsApplication        : No active profile set, falling back to default profiles: default
-2020-09-07 10:20:35.428  INFO 17480 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
-2020-09-07 10:20:35.489  INFO 17480 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51ms. Found 2 JPA repository interfaces.
-2020-09-07 10:20:36.059  INFO 17480 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 1000 (http)
-2020-09-07 10:20:36.067  INFO 17480 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-09-07 10:20:36.067  INFO 17480 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
-2020-09-07 10:20:36.171  INFO 17480 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-09-07 10:20:36.172  INFO 17480 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1290 ms
-2020-09-07 10:20:36.383  INFO 17480 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-09-07 10:20:36.389  INFO 17480 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-09-07 10:20:36.736  INFO 17480 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-09-07 10:20:36.777  INFO 17480 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2020-09-07 10:20:36.826  WARN 17480 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-09-07 10:20:36.834  INFO 17480 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
-2020-09-07 10:20:36.835  INFO 17480 --- [task-1] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2020-09-07 10:20:36.977  INFO 17480 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2020-09-07 10:20:37.069  INFO 17480 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
-2020-09-07 10:20:37.135  INFO 17480 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 1000 (http) with context path ''
-2020-09-07 10:20:37.136  INFO 17480 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
-2020-09-07 10:20:37.554  INFO 17480 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-09-07 10:20:37.788  INFO 17480 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
-2020-09-07 10:20:37.793  INFO 17480 --- [main] com.module.SpringUtilsApplication        : Started SpringUtilsApplication in 3.274 seconds (JVM running for 3.591)
-2020-09-07 10:21:19.559  INFO 17480 --- [http-nio-1000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-09-07 10:21:19.559  INFO 17480 --- [http-nio-1000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-09-07 10:21:19.563  INFO 17480 --- [http-nio-1000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2020-09-07 10:21:19.625  INFO 17480 --- [http-nio-1000-exec-1] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
-2020-09-07 11:20:27.498  INFO 12648 --- [main] com.module.SpringUtilsApplication        : Starting SpringUtilsApplication on DESKTOP-E0G63CJ with PID 12648 (E:\workspace\spring\spring-utils\target\classes started by mhesmkhani in E:\workspace\spring\spring-utils)
-2020-09-07 11:20:27.500  INFO 12648 --- [main] com.module.SpringUtilsApplication        : No active profile set, falling back to default profiles: default
-2020-09-07 11:20:28.030  INFO 12648 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
-2020-09-07 11:20:28.089  INFO 12648 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48ms. Found 2 JPA repository interfaces.
-2020-09-07 11:20:28.648  INFO 12648 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 1000 (http)
-2020-09-07 11:20:28.655  INFO 12648 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-09-07 11:20:28.655  INFO 12648 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
-2020-09-07 11:20:28.764  INFO 12648 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-09-07 11:20:28.764  INFO 12648 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1227 ms
-2020-09-07 11:20:28.970  INFO 12648 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-09-07 11:20:28.976  INFO 12648 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-09-07 11:20:29.329  INFO 12648 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-09-07 11:20:29.370  INFO 12648 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2020-09-07 11:20:29.422  WARN 12648 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-09-07 11:20:29.435  INFO 12648 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
-2020-09-07 11:20:29.436  INFO 12648 --- [task-1] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2020-09-07 11:20:29.576  INFO 12648 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2020-09-07 11:20:29.676  INFO 12648 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
-2020-09-07 11:20:29.719  INFO 12648 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 1000 (http) with context path ''
-2020-09-07 11:20:29.720  INFO 12648 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
-2020-09-07 11:20:30.154  INFO 12648 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-09-07 11:20:30.389  INFO 12648 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
-2020-09-07 11:20:30.394  INFO 12648 --- [main] com.module.SpringUtilsApplication        : Started SpringUtilsApplication in 3.213 seconds (JVM running for 3.535)
-2020-09-07 11:21:23.864  INFO 12648 --- [http-nio-1000-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-09-07 11:21:23.864  INFO 12648 --- [http-nio-1000-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-09-07 11:21:23.869  INFO 12648 --- [http-nio-1000-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
-2020-09-07 11:21:23.944  INFO 12648 --- [http-nio-1000-exec-2] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
-2020-09-07 11:25:46.795  INFO 1048 --- [main] com.module.SpringUtilsApplication        : Starting SpringUtilsApplication on DESKTOP-E0G63CJ with PID 1048 (E:\workspace\spring\spring-utils\target\classes started by mhesmkhani in E:\workspace\spring\spring-utils)
-2020-09-07 11:25:46.797  INFO 1048 --- [main] com.module.SpringUtilsApplication        : No active profile set, falling back to default profiles: default
-2020-09-07 11:25:47.320  INFO 1048 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
-2020-09-07 11:25:47.378  INFO 1048 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48ms. Found 2 JPA repository interfaces.
-2020-09-07 11:25:47.936  INFO 1048 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 1000 (http)
-2020-09-07 11:25:47.943  INFO 1048 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-09-07 11:25:47.943  INFO 1048 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
-2020-09-07 11:25:48.051  INFO 1048 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-09-07 11:25:48.052  INFO 1048 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1219 ms
-2020-09-07 11:25:48.258  INFO 1048 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-09-07 11:25:48.265  INFO 1048 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-09-07 11:25:48.610  INFO 1048 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-09-07 11:25:48.651  INFO 1048 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2020-09-07 11:25:48.699  WARN 1048 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-09-07 11:25:48.707  INFO 1048 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
-2020-09-07 11:25:48.708  INFO 1048 --- [task-1] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2020-09-07 11:25:48.853  INFO 1048 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2020-09-07 11:25:48.952  INFO 1048 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
-2020-09-07 11:25:49.006  INFO 1048 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 1000 (http) with context path ''
-2020-09-07 11:25:49.008  INFO 1048 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
-2020-09-07 11:25:49.431  INFO 1048 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-09-07 11:25:49.661  INFO 1048 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
-2020-09-07 11:25:49.666  INFO 1048 --- [main] com.module.SpringUtilsApplication        : Started SpringUtilsApplication in 3.189 seconds (JVM running for 3.501)
-2020-09-07 11:25:59.099  INFO 1048 --- [http-nio-1000-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-09-07 11:25:59.099  INFO 1048 --- [http-nio-1000-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-09-07 11:25:59.103  INFO 1048 --- [http-nio-1000-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2020-09-07 11:25:59.183  INFO 1048 --- [http-nio-1000-exec-2] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2020-09-08 11:21:36.949  WARN 23320 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-09-08 11:21:36.954  INFO 23320 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2020-09-08 11:21:36.956  INFO 23320 --- [task-1] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2020-09-08 11:21:37.128  INFO 23320 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-09-08 11:21:37.238  INFO 23320 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2020-09-08 11:21:37.356  INFO 23320 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 1000 (http) with context path ''
+2020-09-08 11:21:37.358  INFO 23320 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-09-08 11:21:37.731  INFO 23320 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-09-08 11:21:37.985  INFO 23320 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-09-08 11:21:37.990  INFO 23320 --- [main] com.module.SpringUtilsApplication        : Started SpringUtilsApplication in 3.541 seconds (JVM running for 3.921)
+2020-09-08 11:22:12.557  INFO 23320 --- [http-nio-1000-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-08 11:22:12.557  INFO 23320 --- [http-nio-1000-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-09-08 11:22:12.566  INFO 23320 --- [http-nio-1000-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2020-09-08 11:22:12.622  INFO 23320 --- [http-nio-1000-exec-2] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
