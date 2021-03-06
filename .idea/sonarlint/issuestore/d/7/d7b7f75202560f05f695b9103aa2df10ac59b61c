@@ -1,0 +1,31 @@
+
+dsquid:S00112—"FDefine and throw a dedicated exception instead of using a generic one.(Àæâ¾øÿÿÿÿ
+£%squid:RedundantThrowsDeclarationCheck—"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(Àæâ¾øÿÿÿÿ
+fsquid:S00100-"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³·¶‚
+¢%squid:RedundantThrowsDeclarationCheckW"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(„Á¹–úÿÿÿÿ
+hsquid:S1301ª"KReplace this "switch" statement by "if" statements to increase readability.(¿ÂĞ¥üÿÿÿÿ
+@squid:S1148‘"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+Qsquid:S1161)":Add the "@Override" annotation above this method signature(©”ãİ
+¢%squid:RedundantThrowsDeclarationChecku"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(È©ûÆûÿÿÿÿ
+Psquid:S3655¦"3Call "todo.isPresent()" before accessing the value.(ß¿çûşÿÿÿÿ
+`squid:S11928"IDefine a constant instead of duplicating this literal "message" 20 times.(îù®¸
+?squid:S1148P"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+_squid:S1192C"HDefine a constant instead of duplicating this literal "success" 4 times.(éÃÍË
+squid:S1192R"hDefine a constant instead of duplicating this literal "The value of one of the fields is empty" 4 times.(Ş–ãÆ
+@squid:S1148Ï"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+Psquid:S3655"3Call "todo.isPresent()" before accessing the value.(ß¿çûşÿÿÿÿ
+Hsquid:S1172W",Remove this unused method parameter "todos".(„Á¹–úÿÿÿÿ
+jsquid:S11924"NDefine a constant instead of duplicating this literal "Authorization" 4 times.(°‚é”ıÿÿÿÿ
+%squid:RedundantThrowsDeclarationCheck-"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(³·¶‚
+lsquid:S00100—"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Àæâ¾øÿÿÿÿ
+?squid:S1148o"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+ksquid:S00100W"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(„Á¹–úÿÿÿÿ
+Psquid:S4973<"9Use the "equals" method if value comparison was intended.(¼­¼¿
+osquid:S3776—"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(Àæâ¾øÿÿÿÿ
+msquid:S1192K"QDefine a constant instead of duplicating this literal "token is invalid" 4 times.(È¥¥ñúÿÿÿÿ
+csquid:S00112u"FDefine and throw a dedicated exception instead of using a generic one.(È©ûÆûÿÿÿÿ
+^squid:S00112-"FDefine and throw a dedicated exception instead of using a generic one.(³·¶‚
+isquid:S11928"RDefine a constant instead of duplicating this literal "incorrect request" 4 times.(îù®¸
+ksquid:S00100u"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(È©ûÆûÿÿÿÿ
+Qsquid:S4973¨"9Use the "equals" method if value comparison was intended.(¼­¼¿
+csquid:S00112W"FDefine and throw a dedicated exception instead of using a generic one.(„Á¹–úÿÿÿÿ

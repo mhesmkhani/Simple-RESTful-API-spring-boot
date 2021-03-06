@@ -1,0 +1,15 @@
+
+fsquid:UselessImportCheck"BRemove this unused import 'javax.servlet.http.HttpServletRequest'.(ø©¹…
+isquid:S00117G"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(„ÎŠ†
+fsquid:S00100B"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³ÌÕæ
+Psquid:S4973H"9Use the "equals" method if value comparison was intended.(¼­¼¿
+^squid:S00112B"FDefine and throw a dedicated exception instead of using a generic one.(³ÌÕæ
+esquid:S00116"NRename this field "LOG" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©÷¨C
+¢%squid:RedundantThrowsDeclarationCheck""lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(©ðîÁùÿÿÿÿ
+_squid:S11922"HDefine a constant instead of duplicating this literal "message" 7 times.(éÃÍË
+csquid:S00112""FDefine and throw a dedicated exception instead of using a generic one.(©ðîÁùÿÿÿÿ
+Psquid:S4973("9Use the "equals" method if value comparison was intended.(¼­¼¿
+ksquid:S00100""NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©ðîÁùÿÿÿÿ
+?squid:S1148<"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+%squid:RedundantThrowsDeclarationCheckB"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(³ÌÕæ
+?squid:S1148_"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ

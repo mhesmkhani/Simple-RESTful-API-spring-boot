@@ -13,7 +13,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 
 /**
  * Created by mhesmkhani on 8/24/2020.
@@ -110,7 +113,8 @@ public class TodoController extends TodoMiddleware {
         map.put("message", "The value of one of the fields is empty");
         return ResponseEntity.status(403).body(map);
     }
-    public ResponseEntity<Map> Index(HttpServletRequest request ,@PathVariable("id") String id) throws Exception {
+
+    public ResponseEntity<Map> Index(HttpServletRequest request, @PathVariable("id") String id) throws Exception {
         Map map = new HashMap();
         try {
             Map res = new HashMap();
@@ -121,12 +125,12 @@ public class TodoController extends TodoMiddleware {
             } else {
                 Users user = userRepository.findByToken(token);
                 if (user != null) {
-                   Optional<Todos> todo = todoRepository.findById(id);
-                    if(todo.get().getUserId().equals(user.getId())){
+                    Optional<Todos> todo = todoRepository.findById(id);
+                    if (todo.get().getUserId().equals(user.getId())) {
                         res.put("message", "success");
                         res.put("data", todo);
                         return ResponseEntity.status(200).body(res);
-                    }else {
+                    } else {
                         res.put("message", "doesn't accessibility");
                         return ResponseEntity.status(403).body(res);
                     }
@@ -137,13 +141,14 @@ public class TodoController extends TodoMiddleware {
                 }
 
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         map.put("message", "The value of one of the fields is empty");
         return ResponseEntity.status(403).body(map);
     }
-    public ResponseEntity<Map> Update(HttpServletRequest request, Todos todos ,@PathVariable("id") String id) throws Exception {
+
+    public ResponseEntity<Map> Update(HttpServletRequest request, Todos todos, @PathVariable("id") String id) throws Exception {
         Map map = new HashMap();
         try {
             DateTimeFormatter date = DateTimeFormatter.ofPattern("yyyy/MM/dd ");
@@ -157,31 +162,34 @@ public class TodoController extends TodoMiddleware {
             } else {
                 Users user = userRepository.findByToken(token);
                 if (user != null) {
-                     Optional<Todos> todo = todoRepository.findById(id);
-                    if(todo.get().getUserId().equals(user.getId())){
+                    Optional<Todos> todo = todoRepository.findById(id);
+                    if (todo.get().getUserId().equals(user.getId())) {
                         String msg = todoMiddleware.TodosValidation(todos);
-                        if(msg == "ok"){
-                            String putData = todoMiddleware.putData(todos);
-                            if(putData == "discareptionEmpty"){
-                                todos.setUserId(user.getId());
-                                todos.setIsdone(todo.get().getIsdone());
-                                todos.setCreated_at(todo.get().getCreated_at());
-                                todos.setTitle(todos.getTitle());
-                                todos.setDiscareption(todo.get().getDiscareption());
-                                todos.setUpdated_at(date.format(PersianDate.now()) + curentTime.format(now));
-                                todoRepository.save(todos);
-                            }else{
-                                todos.setUserId(user.getId());
-                                todos.setIsdone(todo.get().getIsdone());
-                                todos.setCreated_at(todo.get().getCreated_at());
-                                todos.setTitle(todos.getTitle());
-                                todos.setDiscareption(todos.getDiscareption());
-                                todos.setUpdated_at(date.format(PersianDate.now()) + curentTime.format(now));
-                                todoRepository.save(todos);
+                        if (msg == "ok") {
+                            String result = todoMiddleware.putData(todos);
+                            switch (result) {
+                                case "discareptionEmpty":
+                                    todos.setUserId(user.getId());
+                                    todos.setIsdone(todo.get().getIsdone());
+                                    todos.setCreated_at(todo.get().getCreated_at());
+                                    todos.setTitle(todos.getTitle());
+                                    todos.setDiscareption(todo.get().getDiscareption());
+                                    todos.setUpdated_at(date.format(PersianDate.now()) + curentTime.format(now));
+                                    todoRepository.save(todos);
+                                    break;
+                                default:
+                                    todos.setUserId(user.getId());
+                                    todos.setIsdone(todo.get().getIsdone());
+                                    todos.setCreated_at(todo.get().getCreated_at());
+                                    todos.setTitle(todos.getTitle());
+                                    todos.setDiscareption(todos.getDiscareption());
+                                    todos.setUpdated_at(date.format(PersianDate.now()) + curentTime.format(now));
+                                    todoRepository.save(todos);
                             }
+
                             res.put("message", "success");
                             return ResponseEntity.status(200).body(res);
-                        }else {
+                        } else {
                             res.put("message", msg);
                             return ResponseEntity.status(403).body(res);
                         }

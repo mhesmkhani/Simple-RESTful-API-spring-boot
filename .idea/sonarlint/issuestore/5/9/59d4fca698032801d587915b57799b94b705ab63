@@ -1,0 +1,10 @@
+
+tsquid:S1450"]Remove the "todoRepository" field and declare it as a local variable in the relevant methods.(íœ­“
+Isquid:S1068"2Remove this unused "todoRepository" private field.(íœ­“
+esquid:UselessImportCheck"ARemove this unused import 'com.github.mfathi91.time.PersianDate'.(âÈ¬ë
+`squid:UselessImportCheck"<Remove this unused import 'com.module.utils.UserValidation'.(žŸ¾ì
+Isquid:S1068"2Remove this unused "userRepository" private field.(×Š¾
+fsquid:S00100$"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µÃ•‘
+fsquid:UselessImportCheck"BRemove this unused import 'javax.servlet.http.HttpServletRequest'.(ø©¹…
+msquid:UselessImportCheck
+"DRemove this unused import 'org.springframework.http.ResponseEntity'.(¶¯ø¦úÿÿÿÿ

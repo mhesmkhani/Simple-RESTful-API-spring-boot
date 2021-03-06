@@ -1,0 +1,4 @@
+
+ssquid:UselessImportCheck"JRemove this unused import 'org.springframework.data.jpa.repository.Query'.(Äºöïþÿÿÿÿ
+nsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼‚ëöþÿÿÿÿ
+\squid:UselessImportCheck"3Remove this unused import 'com.module.model.Users'.(ÿþŒÛúÿÿÿÿ
